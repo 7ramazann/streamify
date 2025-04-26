@@ -1,0 +1,21 @@
+import { Module } from '@nestjs/common';
+import { PrismaModule } from './prisma/prisma.module';
+import { GraphQLModule } from '@nestjs/graphql';
+import { ApolloDriver } from '@nestjs/apollo';
+import { ConfigModule, ConfigService } from '@nestjs/config';
+import { getGraphQLConfig } from './config/graphql.config';
+import { RedisModule } from './redis/redis.module';
+
+@Module({
+  imports: [
+    GraphQLModule.forRootAsync({
+      driver: ApolloDriver,
+      imports: [ConfigModule],
+      useFactory: getGraphQLConfig,
+      inject: [ConfigService],
+    }),
+    PrismaModule,
+    RedisModule,
+  ],
+})
+export class CoreModule {}

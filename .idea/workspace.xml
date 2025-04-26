@@ -4,14 +4,226 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f8d1cf2c-349c-4b23-975d-d6c7fae60cff" name="Changes" comment="BE setup" />
+    <list default="true" id="f8d1cf2c-349c-4b23-975d-d6c7fae60cff" name="Changes" comment="BE setup">
+      <change afterPath="$PROJECT_DIR$/server/src/core/config/graphql.config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/core/core.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/shared/utils/is-dev.util.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/shared/utils/ms.util.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/shared/utils/parse-boolean.util.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/.env" beforeDir="false" afterPath="$PROJECT_DIR$/server/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/server/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/.yarn-integrity" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/.yarn-integrity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/@types/express-serve-static-core/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/@types/express-serve-static-core/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/@types/express-serve-static-core/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/@types/express-serve-static-core/index.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/@types/express-serve-static-core/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/@types/express-serve-static-core/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/@xhmikosr/downloader/node_modules/content-disposition/HISTORY.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/@xhmikosr/downloader/node_modules/content-disposition/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/@xhmikosr/downloader/node_modules/content-disposition/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/@xhmikosr/downloader/node_modules/content-disposition/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/@xhmikosr/downloader/node_modules/content-disposition/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/body-parser/HISTORY.md" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/body-parser/HISTORY.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/body-parser/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/body-parser/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/body-parser/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/body-parser/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/body-parser/lib/read.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/body-parser/lib/read.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/body-parser/lib/types/json.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/body-parser/lib/types/json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/body-parser/lib/types/raw.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/body-parser/lib/types/raw.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/body-parser/lib/types/text.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/body-parser/lib/types/text.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/body-parser/lib/types/urlencoded.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/body-parser/lib/types/urlencoded.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/body-parser/lib/utils.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/body-parser/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/body-parser/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/commander/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/commander/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/commander/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/commander/Readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/commander/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/commander/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/commander/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/commander/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/commander/typings/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/commander/typings/index.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/content-disposition/HISTORY.md" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/content-disposition/HISTORY.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/content-disposition/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/content-disposition/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/content-disposition/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/content-disposition/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/cookie-signature/History.md" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/cookie-signature/History.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/cookie-signature/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/cookie-signature/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/cookie-signature/Readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/cookie-signature/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/cookie-signature/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/cookie-signature/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/cookie-signature/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/external-editor/node_modules/iconv-lite/Changelog.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/external-editor/node_modules/iconv-lite/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/external-editor/node_modules/iconv-lite/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/external-editor/node_modules/iconv-lite/encodings/dbcs-codec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/external-editor/node_modules/iconv-lite/encodings/dbcs-data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/external-editor/node_modules/iconv-lite/encodings/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/external-editor/node_modules/iconv-lite/encodings/internal.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/external-editor/node_modules/iconv-lite/encodings/sbcs-codec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/external-editor/node_modules/iconv-lite/encodings/sbcs-data-generated.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/external-editor/node_modules/iconv-lite/encodings/sbcs-data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/external-editor/node_modules/iconv-lite/encodings/tables/big5-added.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/external-editor/node_modules/iconv-lite/encodings/tables/cp936.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/external-editor/node_modules/iconv-lite/encodings/tables/cp949.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/external-editor/node_modules/iconv-lite/encodings/tables/cp950.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/external-editor/node_modules/iconv-lite/encodings/tables/eucjp.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/external-editor/node_modules/iconv-lite/encodings/tables/gb18030-ranges.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/external-editor/node_modules/iconv-lite/encodings/tables/gbk-added.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/external-editor/node_modules/iconv-lite/encodings/tables/shiftjis.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/external-editor/node_modules/iconv-lite/encodings/utf16.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/external-editor/node_modules/iconv-lite/encodings/utf7.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/external-editor/node_modules/iconv-lite/lib/bom-handling.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/external-editor/node_modules/iconv-lite/lib/extend-node.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/external-editor/node_modules/iconv-lite/lib/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/external-editor/node_modules/iconv-lite/lib/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/external-editor/node_modules/iconv-lite/lib/streams.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/external-editor/node_modules/iconv-lite/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/finalhandler/HISTORY.md" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/finalhandler/HISTORY.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/finalhandler/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/finalhandler/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/finalhandler/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/finalhandler/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/form-data/node_modules/mime-db/HISTORY.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/form-data/node_modules/mime-db/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/form-data/node_modules/mime-db/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/form-data/node_modules/mime-db/db.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/form-data/node_modules/mime-db/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/form-data/node_modules/mime-db/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/form-data/node_modules/mime-types/HISTORY.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/form-data/node_modules/mime-types/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/form-data/node_modules/mime-types/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/form-data/node_modules/mime-types/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/form-data/node_modules/mime-types/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/fresh/HISTORY.md" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/fresh/HISTORY.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/fresh/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/fresh/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/fresh/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/fresh/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/fresh/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/fresh/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/iconv-lite/.github/dependabot.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/iconv-lite/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/iconv-lite/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/iconv-lite/.idea/iconv-lite.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/iconv-lite/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/iconv-lite/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/iconv-lite/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/iconv-lite/Changelog.md" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/iconv-lite/Changelog.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/iconv-lite/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/iconv-lite/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/iconv-lite/encodings/dbcs-codec.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/iconv-lite/encodings/dbcs-codec.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/iconv-lite/encodings/dbcs-data.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/iconv-lite/encodings/dbcs-data.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/iconv-lite/encodings/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/iconv-lite/encodings/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/iconv-lite/encodings/internal.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/iconv-lite/encodings/internal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/iconv-lite/encodings/sbcs-data.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/iconv-lite/encodings/sbcs-data.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/iconv-lite/encodings/tables/gbk-added.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/iconv-lite/encodings/tables/gbk-added.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/iconv-lite/encodings/utf16.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/iconv-lite/encodings/utf16.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/iconv-lite/encodings/utf32.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/iconv-lite/encodings/utf7.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/iconv-lite/encodings/utf7.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/iconv-lite/lib/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/iconv-lite/lib/index.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/iconv-lite/lib/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/iconv-lite/lib/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/iconv-lite/lib/streams.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/iconv-lite/lib/streams.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/iconv-lite/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/iconv-lite/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/lru-cache/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/lru-cache/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/lru-cache/dist/commonjs/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/lru-cache/dist/commonjs/index.d.ts.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/lru-cache/dist/commonjs/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/lru-cache/dist/commonjs/index.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/lru-cache/dist/commonjs/index.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/lru-cache/dist/commonjs/index.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/lru-cache/dist/commonjs/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/lru-cache/dist/esm/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/lru-cache/dist/esm/index.d.ts.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/lru-cache/dist/esm/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/lru-cache/dist/esm/index.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/lru-cache/dist/esm/index.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/lru-cache/dist/esm/index.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/lru-cache/dist/esm/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/lru-cache/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/lru-cache/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/media-typer/HISTORY.md" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/media-typer/HISTORY.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/media-typer/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/media-typer/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/media-typer/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/media-typer/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/media-typer/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/media-typer/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/media-typer/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/media-typer/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/merge-descriptors/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/merge-descriptors/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/merge-descriptors/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/merge-descriptors/license" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/merge-descriptors/license" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/merge-descriptors/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/merge-descriptors/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/merge-descriptors/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/merge-descriptors/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/mime-types/HISTORY.md" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/mime-types/HISTORY.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/mime-types/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/mime-types/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/mime-types/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/mime-types/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/mime-types/mimeScore.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/mime-types/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/mime-types/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/mime/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/mime/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/mime/Mime.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/mime/Mime.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/mime/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/mime/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/mime/cli.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/mime/cli.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/mime/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/mime/lite.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/mime/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/mime/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/mime/types/other.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/mime/types/standard.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/multer/node_modules/media-typer/HISTORY.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/multer/node_modules/media-typer/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/multer/node_modules/media-typer/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/multer/node_modules/media-typer/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/multer/node_modules/media-typer/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/multer/node_modules/mime-db/HISTORY.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/multer/node_modules/mime-db/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/multer/node_modules/mime-db/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/multer/node_modules/mime-db/db.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/multer/node_modules/mime-db/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/multer/node_modules/mime-db/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/multer/node_modules/mime-types/HISTORY.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/multer/node_modules/mime-types/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/multer/node_modules/mime-types/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/multer/node_modules/mime-types/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/multer/node_modules/mime-types/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/multer/node_modules/type-is/HISTORY.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/multer/node_modules/type-is/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/multer/node_modules/type-is/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/multer/node_modules/type-is/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/multer/node_modules/type-is/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/negotiator/HISTORY.md" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/negotiator/HISTORY.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/negotiator/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/negotiator/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/negotiator/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/negotiator/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/negotiator/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/negotiator/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/prisma/engines/f676762280b54cd07c770017ed3711ddde35f37a/libquery_engine-darwin-arm64.dylib.node" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/raw-body/HISTORY.md" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/raw-body/HISTORY.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/raw-body/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/raw-body/index.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/raw-body/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/raw-body/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/send/HISTORY.md" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/send/HISTORY.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/send/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/send/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/send/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/send/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/send/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/send/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/serve-static/HISTORY.md" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/serve-static/HISTORY.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/serve-static/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/serve-static/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/serve-static/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/serve-static/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/serve-static/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/serve-static/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/superagent/node_modules/.bin/mime" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/superagent/node_modules/.bin/mime" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/terser/node_modules/commander/CHANGELOG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/terser/node_modules/commander/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/terser/node_modules/commander/Readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/terser/node_modules/commander/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/terser/node_modules/commander/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/terser/node_modules/commander/typings/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/type-is/HISTORY.md" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/type-is/HISTORY.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/type-is/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/type-is/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/type-is/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/type-is/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/type-is/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/type-is/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/webpack/node_modules/mime-db/HISTORY.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/webpack/node_modules/mime-db/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/webpack/node_modules/mime-db/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/webpack/node_modules/mime-db/db.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/webpack/node_modules/mime-db/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/webpack/node_modules/mime-db/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/webpack/node_modules/mime-types/HISTORY.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/webpack/node_modules/mime-types/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/webpack/node_modules/mime-types/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/webpack/node_modules/mime-types/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/webpack/node_modules/mime-types/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/prisma/generated/edge.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/prisma/generated/edge.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/prisma/generated/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/prisma/generated/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/server/yarn.lock" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/server" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="ProjectColorInfo">{
@@ -25,24 +237,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "<unknown>",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/user/Internship/streamify",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "ts.external.directory.path": "/Users/user/Internship/streamify/server/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/user/Internship/streamify&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/user/Internship/streamify/server/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -66,6 +278,15 @@
       <updated>1745049445162</updated>
       <workItem from="1745049446133" duration="579000" />
       <workItem from="1745051425144" duration="4151000" />
+      <workItem from="1745057474762" duration="181000" />
+      <workItem from="1745057659360" duration="245000" />
+      <workItem from="1745293300973" duration="314000" />
+      <workItem from="1745293664828" duration="56000" />
+      <workItem from="1745658484727" duration="27000" />
+      <workItem from="1745658526270" duration="189000" />
+      <workItem from="1745658729872" duration="75000" />
+      <workItem from="1745658813499" duration="101000" />
+      <workItem from="1745664740805" duration="38000" />
     </task>
     <task id="LOCAL-00001" summary="BE setup">
       <option name="closed" value="true" />
