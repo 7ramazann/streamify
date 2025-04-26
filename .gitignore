@@ -1,0 +1,45 @@
+# General
+.DS_Store
+*.log
+*.env
+*.env.local
+*.env.*.local
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Dependency directories
+node_modules/
+*/node_modules/
+
+# Build files
+dist/
+build/
+*.js
+*.js.map
+*.d.ts
+
+# Cache
+.cache/
+.turbo/
+
+# Package manager specific
+yarn.lock
+package-lock.json
+pnpm-lock.yaml
+
+# TypeScript
+tsconfig.tsbuildinfo
+
+# Server specific (adjust as needed)
+server/.env
+server/dist/
+
+# Frontend specific (adjust as needed)
+frontend/.env
+frontend/build/
+frontend/.next/
+frontend/out/
