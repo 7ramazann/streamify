@@ -9,9 +9,9 @@ export class RedisService extends Redis {
   constructor(private readonly configService: ConfigService) {
     super(configService.getOrThrow<string>('REDIS_URI'));
   }
-  // create(createRediDto: CreateRediDto) {
-  //   return 'This action adds a new redi';
-  // }
+  create(createRediDto: CreateRediDto) {
+    return 'This action adds a new redi';
+  }
 
   findAll() {
     return `This action returns all redis`;
@@ -21,9 +21,9 @@ export class RedisService extends Redis {
     return `This action returns a #${id} redi`;
   }
 
-  // update(id: number, updateRediDto: UpdateRediDto) {
-  //   return `This action updates a #${id} redi`;
-  // }
+  update(id: number, updateRediDto: UpdateRediDto) {
+    return `This action updates a #${id} redi`;
+  }
 
   remove(id: number) {
     return `This action removes a #${id} redi`;
