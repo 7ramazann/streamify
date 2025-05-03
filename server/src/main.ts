@@ -1,44 +1,44 @@
-import { ValidationPipe } from '@nestjs/common';
-import { ConfigService } from '@nestjs/config';
-import { NestFactory } from '@nestjs/core';
-import RedisStore from 'connect-redis';
-import * as cookieParser from 'cookie-parser';
-import * as session from 'express-session';
-import graphqlUploadExpress from "graphql-upload/graphqlUploadExpress.js"
+import { ValidationPipe } from '@nestjs/common'
+import { ConfigService } from '@nestjs/config'
+import { NestFactory } from '@nestjs/core'
+import RedisStore from 'connect-redis'
+import * as cookieParser from 'cookie-parser'
+import * as session from 'express-session'
+import * as graphqlUploadExpress from 'graphql-upload/graphqlUploadExpress.js'
 
 // Core NestJS module
-import { CoreModule } from './core/core.module';
+import { CoreModule } from './core/core.module'
 
 // Our custom Redis service (extends ioredis)
-import { RedisService } from './core/redis/redis.service';
+import { RedisService } from './core/redis/redis.service'
 
 // Util to convert "30d" to milliseconds
-import { ms, type StringValue } from './shared/utils/ms.util';
+import { ms, type StringValue } from './shared/utils/ms.util'
 
 // Utility to safely convert string env vars to booleans
-import { parseBoolean } from './shared/utils/parse-boolean.util';
+import { parseBoolean } from './shared/utils/parse-boolean.util'
 
 async function bootstrap() {
   // Create the NestJS app instance
-  const app = await NestFactory.create(CoreModule, { rawBody: true });
+  const app = await NestFactory.create(CoreModule, { rawBody: true })
 
   // Access .env values via ConfigService
-  const config = app.get(ConfigService);
+  const config = app.get(ConfigService)
 
   // Access Redis client (custom service)
-  const redis = app.get(RedisService);
+  const redis = app.get(RedisService)
 
   /**
    * MIDDLEWARE: cookie-parser
    * Signs cookies using the secret key
    */
-  app.use(cookieParser(config.getOrThrow<string>('COOKIES_SECRET')));
+  app.use(cookieParser(config.getOrThrow<string>('COOKIES_SECRET')))
 
   /**
    * MIDDLEWARE: graphqlUploadExpress
    * Adds file upload support for GraphQL endpoint
    */
-  app.use(config.getOrThrow<string>('GRAPHQL_PREFIX'), graphqlUploadExpress());
+  app.use(config.getOrThrow<string>('GRAPHQL_PREFIX'), graphqlUploadExpress())
 
   /**
    * GLOBAL VALIDATION PIPE
@@ -46,9 +46,9 @@ async function bootstrap() {
    */
   app.useGlobalPipes(
     new ValidationPipe({
-      transform: true,
-    }),
-  );
+      transform: true
+    })
+  )
 
   /**
    * MIDDLEWARE: express-session
@@ -65,15 +65,15 @@ async function bootstrap() {
         maxAge: ms(config.getOrThrow<StringValue>('SESSION_MAX_AGE')), // Lifetime of cookie
         httpOnly: parseBoolean(config.getOrThrow<string>('SESSION_HTTP_ONLY')), // Prevent client-side access to cookie
         secure: parseBoolean(config.getOrThrow<string>('SESSION_SECURE')), // Only send cookie over HTTPS
-        sameSite: 'lax', // Helps prevent CSRF
+        sameSite: 'lax' // Helps prevent CSRF
       },
       store: new RedisStore({
         client: redis, // Redis client from our service
         prefix: config.getOrThrow<string>('SESSION_FOLDER'), // Prefix for Redis keys
-        ttl: ms(config.getOrThrow<StringValue>('REDIS_TTL')), // Time to live for Redis keys
-      }),
-    }),
-  );
+        ttl: ms(config.getOrThrow<StringValue>('REDIS_TTL')) // Time to live for Redis keys
+      })
+    })
+  )
 
   /**
    * ENABLE CORS
@@ -82,17 +82,15 @@ async function bootstrap() {
   app.enableCors({
     origin: config.getOrThrow<string>('ALLOWED_ORIGIN'),
     credentials: true,
-    exposedHeaders: ['set-cookie'],
-  });
+    exposedHeaders: ['set-cookie']
+  })
 
   /**
    * START THE SERVER
    * Uses port from .env and logs the running URL
    */
-  await app.listen(config.getOrThrow<number>('APPLICATION_PORT'));
-  console.log(
-    `✅ Server is running at: ${config.getOrThrow<string>('APPLICATION_URL')}`,
-  );
+  await app.listen(config.getOrThrow<number>('APPLICATION_PORT'))
+  console.log(`✅ Server is running at: ${config.getOrThrow<string>('APPLICATION_URL')}`)
 }
 
-bootstrap();
+bootstrap()

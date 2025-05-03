@@ -9,6 +9,7 @@ import { AccountModule } from 'src/modules/auth/account/account.module';
 
 @Module({
   imports: [
+    ConfigModule.forRoot({ isGlobal: true }),
     GraphQLModule.forRootAsync({
       driver: ApolloDriver,
       imports: [ConfigModule],
