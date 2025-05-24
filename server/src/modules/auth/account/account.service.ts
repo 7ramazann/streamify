@@ -5,11 +5,11 @@ import { hash } from 'argon2';
 
 @Injectable()
 export class AccountService {
-    constructor(private readonly prisma: PrismaService) {}
+    constructor(private readonly prismaService: PrismaService) {}
 
   
     async findAll() {
-      return this.prisma.user.findMany();
+      return this.prismaService.user.findMany();
     }    
 
     public async create(input: CreateUserInput) {
@@ -17,7 +17,7 @@ export class AccountService {
       const { username, email, password } = input;
 
       // Check if username or email already exists in the database
-      const existingUser = await this.prisma.user.findFirst({
+      const existingUser = await this.prismaService.user.findFirst({
         where: {
           OR: [{ username }, { email }],
         },
@@ -32,7 +32,7 @@ export class AccountService {
       // - hashed password, email, default displayName from username
       const hashedPassword = await hash(password);
 
-      await this.prisma.user.create({
+      await this.prismaService.user.create({
         data: {
           username,
           email,
@@ -43,4 +43,15 @@ export class AccountService {
 
       return true
     }
+
+    // Add this method to retrieve current user
+    public async me(id: string) {
+      const user = await this.prismaService.user.findUnique({
+        where: {
+			  id,
+  		  },
+  	  })
+  	  return user
+    }
+
 }
