@@ -1,28 +1,3 @@
-# version: '3.7'
-
-# services:
-#   db:
-#     container_name: postgres
-#     image: postgres:latest
-#     restart: always
-#     environment:
-#       - POSTGRES_USER=${POSTGRES_USER}
-#       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
-#       - POSTGRES_DATABASE=${POSTGRES_DATABASE}
-#     ports:
-#       - 5433:5432
-#     volumes:
-#       - postgres_data:/var/lib/postgresql/data
-#     networks:
-#       - streamify-backend
-
-# volumes:
-#   postgres_data:
-
-# networks:
-#   streamify-backend:
-
-
 version: '3.7'
 
 services:
@@ -32,13 +7,27 @@ services:
     restart: always
     ports:
       - 6379:6379
-    command: redis-server --requirepass ${REDIS_PASSWORD}
+    command: redis-server --requirepass 123456
     volumes:
       - redis_data:/data
     networks:
       - streamify-backend
 
+  postgres:
+    container_name: postgres
+    image: postgres:latest
+    restart: always
+    ports:
+      - 5433:5432
+    environment:
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - streamify-backend
+
 volumes:
+  redis_data:  # Added redis_data volume
   postgres_data:
 
 networks:
