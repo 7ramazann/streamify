@@ -3,14 +3,16 @@ import { InternalServerErrorException } from '@nestjs/common'
 import { ConfigService } from '@nestjs/config'
 import { User } from '@prisma/client'
 import type { Request } from 'express-session'
+import { SessionMetadata } from '../types/session-metadata.types';
 
 
-export function saveSession(req: Request, user: User) {
+export function saveSession(req: Request, user: User, metadata: SessionMetadata) {
   return new Promise((resolve, reject) => {
     console.log('Attempting to save session for user:', user.id); // Debug log
     
     req.session.userId = user.id;
     req.session.createdAt = new Date();
+    req.session.metadata = metadata;
 
     req.session.save((err) => {
       if (err) {
@@ -22,7 +24,7 @@ export function saveSession(req: Request, user: User) {
         return reject(new InternalServerErrorException('Session save failed'));
       }
       console.log('Session saved successfully:', req.sessionID); // Success log
-      resolve({ user });
+      resolve(user);
     });
   });
 }

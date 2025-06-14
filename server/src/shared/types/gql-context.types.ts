@@ -1,6 +1,7 @@
-import type { Request, Response } from 'express'
+import type { Request as ExpressRequest } from 'express'
+import type { Session } from 'express-session'
 
 export interface GqlContext {
-	req: Request
-	res: Response
+  req: ExpressRequest & { session: Session; sessionID: string }
+  res: Response
 }

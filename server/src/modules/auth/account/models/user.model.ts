@@ -6,7 +6,7 @@ export class UserModel implements User {
   @Field(() => ID)
   public id: string
 
-  @Field(() => String)
+  @Field(() => String, { nullable: true })
   public email: string
 
   @Field(() => String)

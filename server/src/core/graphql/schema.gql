@@ -19,14 +19,44 @@ input LoginInput {
 }
 
 type Mutation {
+  clearSessionCookie: Boolean!
   createUser(data: CreateUserInput!): Boolean!
   loginUser(data: LoginInput!): UserModel!
   logoutUser: Boolean!
+  removeSession(id: String!): Boolean!
 }
 
 type Query {
   findAllUsers: [UserModel!]!
+  findCurrentSession: SessionModel!
   findProfile: UserModel!
+  findSessionsByUser: [SessionModel!]!
+}
+
+type SessionDeviceModel {
+  browser: String!
+  os: String!
+  type: String!
+}
+
+type SessionLocationModel {
+  city: String!
+  country: String!
+  latidute: Float!
+  longitude: Float!
+}
+
+type SessionMetadataModel {
+  device: SessionDeviceModel!
+  ip: String!
+  location: SessionLocationModel!
+}
+
+type SessionModel {
+  createdAt: DateTime!
+  id: ID!
+  metadata: SessionMetadataModel!
+  userId: String!
 }
 
 type UserModel {
@@ -34,7 +64,7 @@ type UserModel {
   bio: String
   createdAt: DateTime!
   displayName: String!
-  email: String!
+  email: String
   id: ID!
   password: String!
   updatedAt: DateTime!
