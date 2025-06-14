@@ -10,10 +10,13 @@ import { SessionModel } from '@/modules/auth/account/models/session.model';
 import { ConflictException } from '@nestjs/common';
 import { ForbiddenError } from '@nestjs/apollo';
 import { NotFoundError } from 'rxjs/internal/util/NotFoundError';
+import { MailerService } from '@nestjs-modules/mailer';
 
 @Resolver('Session')
 export class SessionResolver {
-  constructor(private readonly sessionService: SessionService) {}
+  constructor(
+    private readonly sessionService: SessionService,
+  ) {}
 
   @Mutation(() => UserModel)
   loginUser(
@@ -80,5 +83,14 @@ export class SessionResolver {
     await this.sessionService.clearSession(req)
     return true
   }
+
+// mailing
+@Mutation(() => Boolean)
+async sendTestEmail(@Args('email') email: string) {
+  await this.sessionService.sendWelcomeEmail(email, 'TestUser')
+  return true;
+}
+
+
 
 }

@@ -11,6 +11,7 @@ import { ConfigService } from '@nestjs/config';
 import { getSessionMetadata } from '@/shared/utils/session-metadata.util';
 import { RedisService } from '@/core/redis/redis.service';
 import { GqlContext } from '@/shared/types/gql-context.types';
+import { MailerService } from '@nestjs-modules/mailer';
 
 
 @Injectable()
@@ -18,6 +19,7 @@ export class SessionService {
 
     constructor(private readonly prisma: PrismaService,
         private readonly configService: ConfigService,
+        private readonly mailerService: MailerService,
         private readonly redisService: RedisService
     ) {}
 
@@ -117,4 +119,18 @@ export class SessionService {
     
         return true
     }
+
+
+    // mailing
+    async sendWelcomeEmail(to: string, username: string) {
+        return this.mailerService.sendMail({
+          to,
+          subject: '👋 Welcome to Streamify!',
+          template: './welcome', // optional if using a template engine
+          context: {
+            username
+          },
+          html: `<p>Hello <strong>${username}</strong>, welcome to Streamify!</p>`
+        });
+      }
 }

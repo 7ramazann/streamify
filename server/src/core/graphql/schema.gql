@@ -24,6 +24,7 @@ type Mutation {
   loginUser(data: LoginInput!): UserModel!
   logoutUser: Boolean!
   removeSession(id: String!): Boolean!
+  sendTestEmail(email: String!): Boolean!
 }
 
 type Query {
