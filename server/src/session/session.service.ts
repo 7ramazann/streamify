@@ -1,8 +1,6 @@
 import { ConflictException, Injectable, NotFoundException, UnauthorizedException } from '@nestjs/common';
 import { LoginInput } from './inputs/login.input';
 import { PrismaService } from '@/core/prisma/prisma.service';
-import { equal } from 'assert';
-import { equals } from 'class-validator';
 import { NotFoundError } from 'rxjs';
 import { verify } from 'argon2';
 import { destroySession, saveSession } from '@/shared/utils/session.util';
@@ -45,6 +43,15 @@ export class SessionService {
         if (!isValidPassword) {
             throw new UnauthorizedException('Invalid email or password')
         }
+
+        // if (!user.isEmailVerified) {
+		// 	await this.verificationService.sendVerificationToken(user)
+
+		// 	throw new BadRequestException(
+		// 		'Аккаунт не верифицирован. Пожалуйста, проверьте свою почту для подтверждения'
+		// 	)
+		// }
+        
         const metadata = getSessionMetadata(req, userAgent)
 
         return saveSession(req, user, metadata);
@@ -78,9 +85,6 @@ export class SessionService {
         }
     
         userSessions.sort((a, b) => b.createdAt - a.createdAt)
-        console.log('keys', keys)
-        console.log('userSessions', userSessions)
-        console.log('req.sessionID', req.sessionID)
 
         return userSessions
         .filter(session => session.id === req.sessionID)

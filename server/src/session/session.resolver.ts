@@ -2,20 +2,21 @@ import { Args, Context, Mutation, Query, Resolver } from '@nestjs/graphql';
 import { SessionService } from './session.service';
 import { UserModel } from '@/modules/auth/account/models/user.model';
 import { GqlContext } from '@/shared/types/gql-context.types';
-import { CreateUserInput } from '@/modules/auth/account/inputs/create-user.input';
 import { LoginInput } from './inputs/login.input';
 import { UserAgent } from '@/shared/decorators/user-agent.decorator';
 import { Authorization } from '@/shared/decorators/auth.decorator';
 import { SessionModel } from '@/modules/auth/account/models/session.model';
-import { ConflictException } from '@nestjs/common';
+import { ConflictException, Req } from '@nestjs/common';
 import { ForbiddenError } from '@nestjs/apollo';
 import { NotFoundError } from 'rxjs/internal/util/NotFoundError';
-import { MailerService } from '@nestjs-modules/mailer';
+import { getSessionMetadata } from '@/shared/utils/session-metadata.util';
+import { MailService } from '@/modules/libs/mail/mail.service';
 
 @Resolver('Session')
 export class SessionResolver {
   constructor(
     private readonly sessionService: SessionService,
+    private readonly mailService: MailService
   ) {}
 
   @Mutation(() => UserModel)
@@ -90,6 +91,54 @@ async sendTestEmail(@Args('email') email: string) {
   await this.sessionService.sendWelcomeEmail(email, 'TestUser')
   return true;
 }
+
+
+// just for test email templates
+@Mutation(() => Boolean)
+async sendTestVerificationEmail(@Args('email') email: string, @Context() { req }: GqlContext) {
+  const token = 'test-verification-token';
+  const userAgent = req.headers['user-agent'] as string;
+  const metadata = getSessionMetadata(req, userAgent);
+  await this.mailService.sendVerificationToken(email, token);
+  return true;
+}
+
+@Mutation(() => Boolean)
+async sendTestPasswordRecoveryEmail(@Args('email') email: string, @Context() { req }: GqlContext) {
+  const token = 'test-reset-token';
+  const userAgent = req.headers['user-agent'] as string;
+  const metadata = getSessionMetadata(req, userAgent);
+  await this.mailService.sendPasswordResetToken(email, token, metadata);
+  return true;
+}
+
+@Mutation(() => Boolean)
+async sendTestDeactivateEmail(@Args('email') email: string, @Context() { req }: GqlContext) {
+  const token = 'test-deactivation-token';
+  const userAgent = req.headers['user-agent'] as string;
+  const metadata = getSessionMetadata(req, userAgent);
+  await this.mailService.sendDeactivateToken(email, token, metadata);
+  return true;
+}
+
+@Mutation(() => Boolean)
+async sendTestAccountDeletionEmail(@Args('email') email: string) {
+  await this.mailService.sendAcccountDeletion(email);
+  return true;
+}
+
+@Mutation(() => Boolean)
+async sendTestEnableTwoFactorEmail(@Args('email') email: string) {
+  await this.mailService.sendEnableTwoFactor(email);
+  return true;
+}
+
+@Mutation(() => Boolean)
+async sendTestVerifyChannelEmail(@Args('email') email: string) {
+  await this.mailService.sendVerifyChannel(email);
+  return true;
+}
+
 
 
 
