@@ -2,10 +2,14 @@ import { ConflictException, Injectable } from '@nestjs/common';
 import { CreateUserInput } from './inputs/create-user.input';
 import { PrismaService } from '@/core/prisma/prisma.service';
 import { hash } from 'argon2';
+import { VerificationService } from '../verification/verification.service';
 
 @Injectable()
 export class AccountService {
-    constructor(private readonly prismaService: PrismaService) {}
+    constructor(
+      private readonly prismaService: PrismaService,
+      private readonly verificationService: VerificationService
+    ) {}
 
   
     async findAll() {
@@ -32,7 +36,7 @@ export class AccountService {
       // - hashed password, email, default displayName from username
       const hashedPassword = await hash(password);
 
-      await this.prismaService.user.create({
+      const user = await this.prismaService.user.create({
         data: {
           username,
           email,
@@ -40,6 +44,8 @@ export class AccountService {
           displayName: username
         }
       })
+
+      await this.verificationService.sendVerificationToken(user)
 
       return true
     }

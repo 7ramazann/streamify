@@ -7,6 +7,7 @@ import { getGraphQLConfig } from './config/graphql.config';
 import { RedisModule } from './redis/redis.module';
 import { AccountModule } from 'src/modules/auth/account/account.module';
 import { SessionModule } from '@/session/session.module';
+import { VerificationModule } from '@/modules/auth/verification/verification.module';
 
 @Module({
   imports: [
@@ -20,6 +21,7 @@ import { SessionModule } from '@/session/session.module';
     PrismaModule,
     RedisModule,
     SessionModule,
+    VerificationModule,
     AccountModule
   ],
 })

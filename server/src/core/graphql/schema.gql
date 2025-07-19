@@ -2,6 +2,12 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+type AuthModel {
+  accessToken: String
+  message: String
+  user: UserModel
+}
+
 input CreateUserInput {
   email: String!
   password: String!
@@ -31,6 +37,7 @@ type Mutation {
   sendTestPasswordRecoveryEmail(email: String!): Boolean!
   sendTestVerificationEmail(email: String!): Boolean!
   sendTestVerifyChannelEmail(email: String!): Boolean!
+  verifyAccount(data: VerificationInput!): AuthModel!
 }
 
 type Query {
@@ -73,7 +80,13 @@ type UserModel {
   displayName: String!
   email: String
   id: ID!
+  isEmailVerified: Boolean!
+  isVerified: Boolean!
   password: String!
   updatedAt: DateTime!
   username: String!
+}
+
+input VerificationInput {
+  token: String!
 }

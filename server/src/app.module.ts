@@ -6,6 +6,7 @@ import { SessionModule } from './session/session.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MailerModule } from '@nestjs-modules/mailer';
 import { getMailerConfig } from './core/config/mailer.config';
+import { VerificationModule } from './modules/auth/verification/verification.module';
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import { getMailerConfig } from './core/config/mailer.config';
       inject: [ConfigService],
       useFactory: getMailerConfig,
     }),
+    VerificationModule,
   ],
   controllers: [AppController],
   providers: [AppService],
